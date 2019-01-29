@@ -3,7 +3,7 @@ from credentials import Credentials
 import pyperclip
 
 # user data:
-def create_user(fname, lname, email, username, password):
+def create_user (fname, lname, email, username, password):
     '''
     This function creates a new account.
     '''
