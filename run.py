@@ -1,44 +1,45 @@
-from user import User
-from credentials import Credentials
-import pyperclip
+#!/usr/bin/env python3.6
+from users import Users
+# from credentials import Credentials
+# import pyperclip
 
-# user data:
-def create_user (fname, lname, email, username, password):
+# # user data:
+def create_users (fname, lname, email, username, password):
     '''
     This function creates a new account.
     '''
-    new_user = User(fname, lname, email, username, password)
-    return new_user
+    new_users = Users(fname, lname, email, username, password)
+    return new_users
 
-def save_user(user):
+def save_users(users):
     '''
     This function saves an account.
     '''
-    user.save_user()
+    users.save_users()
 
-def delete_user(user):
+def delete_users(users):
     '''
     This function deletes an account.
     '''
-    user.delete_user()
+    user.delete_users()
 
-def find_user(email):
+def find_users(email):
     '''
-    This function finds a user by their email address.
+    This function finds a users by their email address.
     '''
-    return User.find_by_email(email)
+    return Users.find_by_email(email)
 
-def check_existing_user(email):
+def check_existing_users(email):
     '''
     This function checks if a user exists with that email and returns a Boolean.
     '''
-    return User.user_exist(email)
+    return Users.user_exist(email)
 
 def display_users():
     '''
     This function returns all saved users.
     '''
-    return User.display_users()
+    return Users.display_users()
 
 def user_exists(email):
     '''
@@ -63,12 +64,12 @@ def delete_credentials(credentials):
 
 
 def main():
-    print("Hello, welcome to your user data list. What is your name?")
+    print("HELLO, WELCOME TO PASSWORD-LOCKER. What is your name?")
 
     user_name = input()
     print("")
 
-    print("Hello {user_name}. What would you like to do?")
+    print(f"Hello {user_name}. What would you like to do?")
     print("\n")
 
     while True:
@@ -78,7 +79,7 @@ def main():
         short_code = input().lower()
 
         if short_code == 'cu':
-            print("New User")
+            print("New Users")
             print("-" * 10)
 
             print("First name ....")
@@ -93,18 +94,18 @@ def main():
             print("Email address ...")
             e_address = input()
 
-            save_user(create_user)
+            save_users(create_users)
             print('\n')
-            print("New User {f_name} {l_name} created")
+            print(f"New Users {f_name} {l_name} created")
             print('\n')
 
         elif short_code == 'du':
 
-            if display_user():
-                print("Here is a list of all your user data")
+            if display_users():
+                print("Here is a list of all your users data")
                 print('\n')
 
-                for user in display_user():
+                for user in display_users():
                     print("{user.first_name} {user.last_name} .....{user.username}")
 
                 print('\n')
@@ -119,12 +120,12 @@ def main():
 
             search_email = input()
             if check_existing_user(search_email):
-                search_user = find_user(search_email)
-                print("{search_user.first_name} {search_user.last_name}")
+                search_users = find_users(search_email)
+                print("{search_user.first_name} {search_users.last_name}")
                 print('-' * 20)
 
-                print("Username.......{search_user.username}")
-                print("Email address.......{search_user.email}")
+                print("Username.......{search_users.username}")
+                print("Email address.......{search_users.email}")
             else:
                 print("That user data does not exist")
 
