@@ -18,6 +18,14 @@ To be able to run this application, you need to:
 - go to my Github account and clone the repository for the application - https://github.com/JamesMusyoka/PASSWORD-LOCKER
 - run the application via the terminal.
 
+## BDD
+|   Behavior    |    Input      |  Output    |
+|----------|:-----------|:----------:|
+| Run the application | name | Welcome message "Hello name" |
+| Prompts the user to select  a specific shortcode of his/her choice |      |        |
+| Shortcode "cu, du, fu & ex" | Username  | confirmation message |
+| Prompt user to select available options of his/her choice |       |          |
+| Selcting the options of your own choice | Account name  | Generate a password |
 ## KNOWN BUGS
 This is still a work in progress but for any issues encountered and any contributions to the code, kindly reach out to me on my email address: jamesmu475@gmail.com.
 
