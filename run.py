@@ -1,10 +1,10 @@
 #!/usr/bin/env python3.6
 from users import Users
-# from credentials import Credentials
-# import pyperclip
+from credentials import Credentials
+import pyperclip
 
 # # user data:
-def create_users (fname, lname, email, username, password):
+def create_user(fname, lname, email, username, password):
     '''
     This function creates a new account.
     '''
@@ -94,7 +94,10 @@ def main():
             print("Email address ...")
             e_address = input()
 
-            save_users(create_users)
+            print("password ...")
+            password = input()
+
+            save_users(create_user(fname,lname,user_name,email, password))
             print('\n')
             print(f"New Users {f_name} {l_name} created")
             print('\n')
@@ -134,7 +137,6 @@ def main():
             break
         else:
              print("I really didn't get that. Please use the short codes")
-
-
+             
 if __name__ == '__main__':
     main()
